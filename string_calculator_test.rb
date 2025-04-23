@@ -23,7 +23,7 @@ class StringCalculatorTest < Minitest::Test
     end
 
     def test_add_with_negative_numbers
-        assert_raises(ArgumentError) { add("-1,2") }
-        assert_raises(ArgumentError) { add("3,-4") }
+        assert_raises(ArgumentError, "negative numbers are not allowed: -1") { add("-1,2") }
+        assert_raises(ArgumentError, "negative numbers are not allowed: -4, -3") { add("3,-4, -3") }
     end
 end
