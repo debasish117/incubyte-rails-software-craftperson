@@ -21,4 +21,9 @@ class StringCalculatorTest < Minitest::Test
         assert_equal 6, add("1\n2,3")
         assert_equal 10, add("4\n5,1")
     end
+
+    def test_add_with_negative_numbers
+        assert_raises(ArgumentError) { add("-1,2") }
+        assert_raises(ArgumentError) { add("3,-4") }
+    end
 end
