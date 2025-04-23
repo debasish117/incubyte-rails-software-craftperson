@@ -16,4 +16,9 @@ class StringCalculatorTest < Minitest::Test
         assert_equal 3, add("1,2")
         assert_equal 7, add("3,4")
     end
+
+    def test_add_with_newlines
+        assert_equal 6, add("1\n2,3")
+        assert_equal 10, add("4\n5,1")
+    end
 end
