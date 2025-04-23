@@ -26,4 +26,9 @@ class StringCalculatorTest < Minitest::Test
         assert_raises(ArgumentError, "negative numbers are not allowed: -1") { add("-1,2") }
         assert_raises(ArgumentError, "negative numbers are not allowed: -4, -3") { add("3,-4, -3") }
     end
+
+    def test_add_with_custom_delimiter
+        assert_equal 3, add("//;\n1;2")
+        assert_equal 6, add("//:\n1:2:3")
+    end
 end
